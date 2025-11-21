@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "name": "Иван Иванов",
+    "email": "ivan.ivanov@mail.ru",
+    "phone": "+375 (33) 123-45-67",
+    "company": { "name": "ООО Рога и Копыта" },
+    "address": { "city": "Брест" }
+  },
+  {
+    "id": 2,
+    "name": "Мария Петрова",
+    "email": "maria.petrova@gmail.com",
+    "phone": "+375 (999) 234-56-78",
+    "company": { "name": "ИП Петров" },
+    "address": { "city": "Витебск" }
+  },
+  {
+    "id": 3,
+    "name": "Алексей Смирнов",
+    "email": "alex.smirnov@yandex.ru",
+    "phone": "+375 (33) 345-67-89",
+    "company": { "name": "ООО Рога и Копыта" },
+    "address": { "city": "Брест" }
+  },
+  {
+    "id": 4,
+    "name": "Елена Васильева",
+    "email": "elena.vasileva@mail.ru",
+    "phone": "+375 (44) 456-78-90",
+    "company": { "name": "ЗАО Светлое будущее" },
+    "address": { "city": "Минск" }
+  },
+  {
+    "id": 5,
+    "name": "Дмитрий Кузнецов",
+    "email": "dmitry.kuznetsov@gmail.com",
+    "phone": "+375 (29) 567-89-01",
+    "company": { "name": "ИП Петров" },
+    "address": { "city": "Гомель" }
+  },
+  {
+    "id": 6,
+    "name": "Ольга Соколова",
+    "email": "olga.sokolova@mail.ru",
+    "phone": "+375 (29) 678-90-12",
+    "company": { "name": "ООО Рога и Копыта" },
+    "address": { "city": "Гродно" }
+  },
+  {
+    "id": 7,
+    "name": "Сергей Морозов",
+    "email": "sergey.morozov@yandex.ru",
+    "phone": "+375 (29) 789-01-23",
+    "company": { "name": "ООО ТехноСила" },
+    "address": { "city": "Брест" }
+  },
+  {
+    "id": 8,
+    "name": "Анна Федорова",
+    "email": "anna.fedorova@gmail.com",
+    "phone": "+375 (29) 890-12-34",
+    "company": { "name": "ЗАО Светлое будущее" },
+    "address": { "city": "Витебск" }
+  },
+  {
+    "id": 9,
+    "name": "Михаил Новиков",
+    "email": "mikhail.novikov@mail.ru",
+    "phone": "+375 (44) 901-23-45",
+    "company": { "name": "ИП Петров" },
+    "address": { "city": "Минск" }
+  },
+  {
+    "id": 10,
+    "name": "Татьяна Павлова",
+    "email": "tatyana.pavlova@yandex.ru",
+    "phone": "+375 (29) 012-34-56",
+    "company": { "name": "ООО ТехноСила" },
+    "address": { "city": "Брест" }
+  },
+  {
+    "id": 11,
+    "name": "Андрей Волков",
+    "email": "andrey.volkov@gmail.com",
+    "phone": "+375 (44) 123-45-67",
+    "company": { "name": "ООО Рога и Копыта" },
+    "address": { "city": "Гомель" }
+  },
+  {
+    "id": 12,
+    "name": "Наталья Семенова",
+    "email": "natalya.semenova@mail.ru",
+    "phone": "+375 (44) 234-56-78",
+    "company": { "name": "ЗАО Светлое будущее" },
+    "address": { "city": "Гродно" }
+  },
+  {
+    "id": 13,
+    "name": "Владимир Егоров",
+    "email": "vladimir.egorov@yandex.ru",
+    "phone": "+375 (44) 345-67-89",
+    "company": { "name": "ООО ТехноСила" },
+    "address": { "city": "Витебск" }
+  },
+  {
+    "id": 14,
+    "name": "Екатерина Козлова",
+    "email": "ekaterina.kozlova@gmail.com",
+    "phone": "+375 (29) 456-78-90",
+    "company": { "name": "ИП Петров" },
+    "address": { "city": "Брест" }
+  },
+  {
+    "id": 15,
+    "name": "Николай Степанов",
+    "email": "nikolay.stepanov@mail.ru",
+    "phone": "+375 (29) 567-89-01",
+    "company": { "name": "ООО Рога и Копыта" },
+    "address": { "city": "Минск" }
+  },
+  {
+    "id": 16,
+    "name": "Юлия Орлова",
+    "email": "yuliya.orlova@yandex.ru",
+    "phone": "+375 (44) 678-90-12",
+    "company": { "name": "ЗАО Светлое будущее" },
+    "address": { "city": "Гомель" }
+  },
+  {
+    "id": 17,
+    "name": "Артем Григорьев",
+    "email": "artem.grigoriev@gmail.com",
+    "phone": "+375 (44) 789-01-23",
+    "company": { "name": "ООО ТехноСила" },
+    "address": { "city": "Гродно" }
+  },
+  {
+    "id": 18,
+    "name": "Светлана Романова",
+    "email": "svetlana.romanova@mail.ru",
+    "phone": "+375 (29) 890-12-34",
+    "company": { "name": "ИП Петров" },
+    "address": { "city": "Брест" }
+  },
+  {
+    "id": 19,
+    "name": "Игорь Захаров",
+    "email": "igor.zakharov@yandex.ru",
+    "phone": "+375 (44) 901-23-45",
+    "company": { "name": "ООО Рога и Копыта" },
+    "address": { "city": "Витебск" }
+  },
+  {
+    "id": 20,
+    "name": "Виктория Медведева",
+    "email": "viktoriya.medvedeva@gmail.com",
+    "phone": "+375 (29) 012-34-56",
+    "company": { "name": "ЗАО Светлое будущее" },
+    "address": { "city": "Минск" }
+  },
+  {
+    "id": 21,
+    "name": "Максим Лебедев",
+    "email": "maxim.lebedev@mail.ru",
+    "phone": "+375 (44) 123-45-67",
+    "company": { "name": "ООО ТехноСила" },
+    "address": { "city": "Гомель" }
+  },
+  {
+    "id": 22,
+    "name": "Дарья Николаева",
+    "email": "darya.nikolaeva@yandex.ru",
+    "phone": "+375 (33) 234-56-78",
+    "company": { "name": "ИП Петров" },
+    "address": { "city": "Гродно" }
+  },
+  {
+    "id": 23,
+    "name": "Роман Королев",
+    "email": "roman.korolev@gmail.com",
+    "phone": "+375 (29) 345-67-89",
+    "company": { "name": "ООО Рога и Копыта" },
+    "address": { "city": "Брест" }
+  },
+  {
+    "id": 24,
+    "name": "Кристина Белова",
+    "email": "kristina.belova@mail.ru",
+    "phone": "+375 (33) 456-78-90",
+    "company": { "name": "ЗАО Светлое будущее" },
+    "address": { "city": "Витебск" }
+  },
+  {
+    "id": 25,
+    "name": "Павел Макаров",
+    "email": "pavel.makarov@yandex.ru",
+    "phone": "+375 (29) 567-89-01",
+    "company": { "name": "ООО ТехноСила" },
+    "address": { "city": "Минск" }
+  },
+  {
+    "id": 26,
+    "name": "Алина Антонова",
+    "email": "alina.antonova@gmail.com",
+    "phone": "+375 (29) 678-90-12",
+    "company": { "name": "ИП Петров" },
+    "address": { "city": "Гомель" }
+  },
+  {
+    "id": 27,
+    "name": "Константин Тихонов",
+    "email": "konstantin.tikhonov@mail.ru",
+    "phone": "+375 (29) 789-01-23",
+    "company": { "name": "ООО Рога и Копыта" },
+    "address": { "city": "Гродно" }
+  },
+  {
+    "id": 28,
+    "name": "Валерия Денисова",
+    "email": "valeriya.denisova@yandex.ru",
+    "phone": "+375 (33) 890-12-34",
+    "company": { "name": "ЗАО Светлое будущее" },
+    "address": { "city": "Брест" }
+  },
+  {
+    "id": 29,
+    "name": "Антон Жуков",
+    "email": "anton.zhukov@gmail.com",
+    "phone": "+375 (25) 901-23-45",
+    "company": { "name": "ООО ТехноСила" },
+    "address": { "city": "Витебск" }
+  },
+  {
+    "id": 30,
+    "name": "Полина Соловьева",
+    "email": "polina.solovieva@mail.ru",
+    "phone": "+375 (33) 012-34-56",
+    "company": { "name": "ИП Петров" },
+    "address": { "city": "Минск" }
+  }
+]
