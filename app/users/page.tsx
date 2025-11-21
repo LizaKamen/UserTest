@@ -9,6 +9,8 @@ import {Button} from "@/components/ui/button";
 import CreateUserModal from "@/components/users/CreateUserModal";
 import {toast} from "sonner";
 import SkeletonList from "@/components/users/SkeletonList";
+import {UserPagination} from "@/components/users/UserPagination";
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
 
 export default function UsersPage() {
     const [users, setUsers] = useState<User[]>([]);
@@ -16,6 +18,8 @@ export default function UsersPage() {
     const [error, setError] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
     const [showCreateModal, setShowCreateModal] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [pageSize, setPageSize] = useState(10);
     const [sortBy, setSortBy] = useState({by: "", order: ""});
     const [filters, setFilters] = useState({
         city: '',
@@ -45,23 +49,23 @@ export default function UsersPage() {
                 break
             case "name":
                 sortFn = sortBy.order === "asc"
-                    ? (a: User, b: User) => a.name.charCodeAt(0) - b.name.charCodeAt(0)
-                    : (a: User, b: User) => b.name.charCodeAt(0) - a.name.charCodeAt(0)
+                    ? (a: User, b: User) => a.name.localeCompare(b.name)
+                    : (a: User, b: User) => b.name.localeCompare(a.name)
                 break
             case "email":
                 sortFn = sortBy.order === "asc"
-                    ? (a: User, b: User) => a.email.charCodeAt(0) - b.email.charCodeAt(0)
-                    : (a: User, b: User) => b.email.charCodeAt(0) - a.email.charCodeAt(0)
+                    ? (a: User, b: User) => a.email.localeCompare(b.email)
+                    : (a: User, b: User) => b.email.localeCompare(a.email)
                 break
             case "company":
                 sortFn = sortBy.order === "asc"
-                    ? (a: User, b: User) => a.company.name.charCodeAt(0) - b.company.name.charCodeAt(0)
-                    : (a: User, b: User) => b.company.name.charCodeAt(0) - a.company.name.charCodeAt(0)
+                    ? (a: User, b: User) => a.company.name.localeCompare(b.company.name)
+                    : (a: User, b: User) => b.company.name.localeCompare(a.company.name)
                 break
             case "address":
                 sortFn = sortBy.order === "asc"
-                    ? (a: User, b: User) => a.address.city.charCodeAt(0) - b.address.city.charCodeAt(0)
-                    : (a: User, b: User) => b.address.city.charCodeAt(0) - a.address.city.charCodeAt(0)
+                    ? (a: User, b: User) => a.address.city.localeCompare(b.address.city)
+                    : (a: User, b: User) => b.address.city.localeCompare(a.address.city)
                 break
             default:
                 sortFn = (a: User, b: User) => b.id - a.id
@@ -69,6 +73,24 @@ export default function UsersPage() {
         return filtered.sort(sortFn)
 
     }, [users, sortBy.by, sortBy.order, searchTerm, filters.city, filters.company]);
+
+    const currentUsers = useMemo(() => {
+        const startIndex = (currentPage - 1) * pageSize;
+        const endIndex = startIndex + pageSize;
+        return filteredUsers.slice(startIndex, endIndex);
+    }, [filteredUsers, currentPage, pageSize]);
+
+    const totalPages = Math.ceil(filteredUsers.length / pageSize);
+
+    const handleUsersPerPageChange = (value: string) => {
+        setPageSize(Number(value));
+        setCurrentPage(1);
+    };
+
+    // Сбрасываем страницу при изменении фильтров или поиска
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [searchTerm, filters.city, filters.company, sortBy]);
 
     const exportJson = () => {
         const data = JSON.stringify(users, null, 2);
@@ -144,7 +166,29 @@ export default function UsersPage() {
             <Button onClick={() => setShowCreateModal(true)} variant="outline" size="sm">Create</Button>
             <CreateUserModal isOpen={showCreateModal} onClose={() => setShowCreateModal(false)} onSave={handleSave}
                              emails={emails}/>
-            <UserList users={filteredUsers} onDeleted={onDeleted} onUpdated={onUpdated} emails={emails} setSortBy={setSortBy} sortBy={sortBy}/>
+            <UserList users={currentUsers} onDeleted={onDeleted} onUpdated={onUpdated} emails={emails} setSortBy={setSortBy} sortBy={sortBy}/>
+            <div className="flex items-center space-x-4">
+                    <span className="text-sm text-gray-600">
+                        Showing {((currentPage - 1) * pageSize) + 1} to {Math.min(currentPage * pageSize, filteredUsers.length)} of {filteredUsers.length} users
+                    </span>
+
+                <Select value={pageSize.toString()} onValueChange={handleUsersPerPageChange}>
+                    <SelectTrigger className="w-20">
+                        <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="5">5</SelectItem>
+                        <SelectItem value="10">10</SelectItem>
+                        <SelectItem value="20">20</SelectItem>
+                        <SelectItem value="50">50</SelectItem>
+                    </SelectContent>
+                </Select>
+            </div>
+            <UserPagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={setCurrentPage}
+                />
         </div>
     )
         ;

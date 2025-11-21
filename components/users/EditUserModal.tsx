@@ -7,7 +7,6 @@ import {
     DialogHeader,
     DialogTitle
 } from "@/components/ui/dialog";
-import {toast} from "sonner";
 import UserForm from "@/components/users/UserForm";
 
 export default function EditUserModal({isOpen, onClose, onSave, user, userId, emails}: EditUserModalProps) {
